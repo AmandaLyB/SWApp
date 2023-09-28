@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://omlp6707jdpd"]
+
+[ext_resource type="Texture2D" uid="uid://cr0i7136a10nf" path="res://Art/Title.png" id="1_d7wce"]
+[ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_q7brq"]
+[ext_resource type="Texture2D" uid="uid://5kr6sw8iyy1x" path="res://Art/PLAY.PNG" id="2_pjn24"]
+[ext_resource type="Texture2D" uid="uid://coe54bndjo0s2" path="res://Art/PLAY2.PNG" id="3_il30a"]
+[ext_resource type="Texture2D" uid="uid://3ay3ixbuqecm" path="res://Art/QUIT.png" id="5_dbigp"]
+[ext_resource type="Texture2D" uid="uid://ch210vcldvmea" path="res://Art/QUIT2.png" id="6_n7tuq"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_q7brq")
+
+[node name="GameTitle" type="Sprite2D" parent="."]
+position = Vector2(964, 382)
+texture = ExtResource("1_d7wce")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 756.0
+offset_top = 654.0
+offset_right = 1163.0
+offset_bottom = 758.0
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+texture_normal = ExtResource("2_pjn24")
+texture_pressed = ExtResource("3_il30a")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Settings" type="TextureButton" parent="."]
+modulate = Color(0.654902, 0.458824, 0.490196, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1303.0
+offset_top = 723.0
+offset_right = 1710.0
+offset_bottom = 827.0
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+texture_normal = ExtResource("2_pjn24")
+texture_pressed = ExtResource("3_il30a")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="QUIT" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 757.0
+offset_top = 811.0
+offset_right = 1164.0
+offset_bottom = 915.0
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+texture_normal = ExtResource("5_dbigp")
+texture_pressed = ExtResource("6_n7tuq")
+ignore_texture_size = true
+stretch_mode = 6
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="QUIT" to="." method="_on_quit_pressed"]
