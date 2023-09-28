@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://omlp6707jdpd"]
+[gd_scene load_steps=10 format=3 uid="uid://omlp6707jdpd"]
 
 [ext_resource type="Script" path="res://Scenes/Menu.gd" id="1_q7brq"]
+[ext_resource type="PackedScene" uid="uid://dsan41150ncqa" path="res://Scenes/day_bg.tscn" id="2_5f0g6"]
 [ext_resource type="Texture2D" uid="uid://cr0i7136a10nf" path="res://Art/UI/Title.png" id="2_hj0eu"]
 [ext_resource type="Texture2D" uid="uid://5kr6sw8iyy1x" path="res://Art/UI/PLAY.PNG" id="3_0rod1"]
 [ext_resource type="Texture2D" uid="uid://coe54bndjo0s2" path="res://Art/UI/PLAY2.PNG" id="4_msnjr"]
@@ -12,8 +13,10 @@
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_q7brq")
 
+[node name="DayBG" parent="." instance=ExtResource("2_5f0g6")]
+
 [node name="GameTitle" type="Sprite2D" parent="."]
-position = Vector2(964, 382)
+position = Vector2(931, 225)
 texture = ExtResource("2_hj0eu")
 
 [node name="Play" type="TextureButton" parent="."]
