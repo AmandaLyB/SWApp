@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5kr6sw8iyy1x"
-path="res://.godot/imported/PLAY.PNG-15534def36c2026f0c739fa6ba65dff0.ctex"
+uid="uid://dn6m64vw76p00"
+path="res://.godot/imported/SET1_bakcground_night3.png-2b4bf7c26432f0d571655d85365b6d31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/PLAY.PNG"
-dest_files=["res://.godot/imported/PLAY.PNG-15534def36c2026f0c739fa6ba65dff0.ctex"]
+source_file="res://Art/Tiles/SET1_bakcground_night3.png"
+dest_files=["res://.godot/imported/SET1_bakcground_night3.png-2b4bf7c26432f0d571655d85365b6d31.ctex"]
 
 [params]
 

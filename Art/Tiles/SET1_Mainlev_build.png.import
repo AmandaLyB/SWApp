@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vnuxin4kj5nh"
-path="res://.godot/imported/LukeIdle2.png-602c2dd0a216c142869de8416a59b4ee.ctex"
+uid="uid://b5fvs7oia3g86"
+path="res://.godot/imported/SET1_Mainlev_build.png-966e3637dfd7b0467e9b1f88f4106b6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/LukeIdle2.png"
-dest_files=["res://.godot/imported/LukeIdle2.png-602c2dd0a216c142869de8416a59b4ee.ctex"]
+source_file="res://Art/Tiles/SET1_Mainlev_build.png"
+dest_files=["res://.godot/imported/SET1_Mainlev_build.png-966e3637dfd7b0467e9b1f88f4106b6e.ctex"]
 
 [params]
 

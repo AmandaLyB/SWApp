@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3junogcjgx38"
-path="res://.godot/imported/LukeSprite JumpLEFT.png-add9cd85b73017b3c954cd11ea7bdd0d.ctex"
+uid="uid://bhm2ha5ii6ubv"
+path="res://.godot/imported/LukeSprite.png-bf0d1b165516b58a3ed9ef7b6100169d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/LukeSprite JumpLEFT.png"
-dest_files=["res://.godot/imported/LukeSprite JumpLEFT.png-add9cd85b73017b3c954cd11ea7bdd0d.ctex"]
+source_file="res://Art/Sprites/LukeSprite.png"
+dest_files=["res://.godot/imported/LukeSprite.png-bf0d1b165516b58a3ed9ef7b6100169d.ctex"]
 
 [params]
 
