@@ -1,5 +1,31 @@
-[gd_scene format=3 uid="uid://cygxcc2urgb44"]
+[gd_scene load_steps=4 format=3 uid="uid://cygxcc2urgb44"]
+
+[ext_resource type="Script" path="res://Scenes/Archives.gd" id="1_07ovb"]
+[ext_resource type="Texture2D" uid="uid://bm1418o2h7i6u" path="res://Art/backButton.png" id="2_vpu5k"]
+[ext_resource type="Texture2D" uid="uid://c1fepw6utd4o7" path="res://Art/archivesButton.png" id="3_7fybb"]
 
 [node name="Archives" type="Node2D"]
+script = ExtResource("1_07ovb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Dropdown" type="MenuButton" parent="."]
+offset_left = 774.0
+offset_top = 903.0
+offset_right = 1114.0
+offset_bottom = 1007.0
+text = "DROP DOWN CHARACTER SWAPI PLACEHOLDER"
+
+[node name="Back" type="TextureButton" parent="."]
+modulate = Color(0, 1, 1, 1)
+offset_left = 54.0
+offset_top = 872.0
+offset_right = 427.0
+offset_bottom = 1038.0
+texture_normal = ExtResource("2_vpu5k")
+
+[node name="ArchivesButton" type="Sprite2D" parent="."]
+position = Vector2(922, 317)
+texture = ExtResource("3_7fybb")
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
