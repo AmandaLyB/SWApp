@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckmlafycn1ejh"]
+
+[ext_resource type="Script" path="res://Scripts/DayBG.gd" id="1_v6545"]
+[ext_resource type="Texture2D" path="res://Art/Tiles/SET1_bakcground_day1.png" id="2_wspdn"]
+[ext_resource type="Texture2D" uid="uid://1ntsuw4tdwcm" path="res://Art/Tiles/Test/junglemountain1.png" id="3_wctxo"]
+[ext_resource type="Texture2D" uid="uid://ch0oy2dxo57hf" path="res://Art/Tiles/Test/junglemountain2.png" id="4_7a1ir"]
+[ext_resource type="Texture2D" uid="uid://cy4sywf4r1iao" path="res://Art/Tiles/Test/junglemountain3.png" id="5_coatd"]
+[ext_resource type="Texture2D" uid="uid://b2256u1htqo5o" path="res://Art/Tiles/Test/xwing1.png" id="6_w83mo"]
+
+[node name="DayBG" type="ParallaxBackground"]
+script = ExtResource("1_v6545")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Backday" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(960, 534)
+scale = Vector2(3, 2.88043)
+texture = ExtResource("2_wspdn")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(2140, 0)
+
+[node name="Junglemountain1" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(160, 872)
+scale = Vector2(2.5625, 2.5625)
+texture = ExtResource("3_wctxo")
+
+[node name="Junglemountain2" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(492, 766.75)
+scale = Vector2(3.07143, 2.53436)
+texture = ExtResource("4_7a1ir")
+
+[node name="Junglemountain3" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(784, 896.5)
+scale = Vector2(1.875, 2.52105)
+texture = ExtResource("5_coatd")
+
+[node name="Junglemountain4" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(1068, 872)
+scale = Vector2(2.5625, 2.5625)
+texture = ExtResource("3_wctxo")
+
+[node name="Junglemountain5" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(1400, 766.75)
+scale = Vector2(3.07143, 2.53436)
+texture = ExtResource("4_7a1ir")
+
+[node name="Junglemountain6" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(1692, 896.5)
+scale = Vector2(1.875, 2.52105)
+texture = ExtResource("5_coatd")
+
+[node name="Junglemountain7" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(1976, 873)
+scale = Vector2(2.5625, 2.5625)
+texture = ExtResource("3_wctxo")
+
+[node name="Xwing1" type="Sprite2D" parent="."]
+position = Vector2(192, 304)
+texture = ExtResource("6_w83mo")
+centered = false
