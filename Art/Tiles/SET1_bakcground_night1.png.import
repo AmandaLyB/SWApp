@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://itwrw4xpgpkn"
-path="res://.godot/imported/LukeSprite_LightSaberRunLEFT.png-415fc83a5b2af10caf1413f3db57bad9.ctex"
+uid="uid://7iehq8qm60ar"
+path="res://.godot/imported/SET1_bakcground_night1.png-9d6062d1096954c56351fa3721391205.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/LukeSprite_LightSaberRunLEFT.png"
-dest_files=["res://.godot/imported/LukeSprite_LightSaberRunLEFT.png-415fc83a5b2af10caf1413f3db57bad9.ctex"]
+source_file="res://Art/Tiles/SET1_bakcground_night1.png"
+dest_files=["res://.godot/imported/SET1_bakcground_night1.png-9d6062d1096954c56351fa3721391205.ctex"]
 
 [params]
 

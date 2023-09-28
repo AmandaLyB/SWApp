@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxfliya32idxy"
-path="res://.godot/imported/StoneBlock.png-68fbbef26cfd937016926f354df4320c.ctex"
+uid="uid://dexj44bwb73a6"
+path="res://.godot/imported/LeiaHanSpritesheet.png-6041b580ed14f4daf740eb45c201b0c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/StoneBlock.png"
-dest_files=["res://.godot/imported/StoneBlock.png-68fbbef26cfd937016926f354df4320c.ctex"]
+source_file="res://Art/Sprites/LeiaHanSpritesheet.png"
+dest_files=["res://.godot/imported/LeiaHanSpritesheet.png-6041b580ed14f4daf740eb45c201b0c9.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0dgi785ahnmu"
-path="res://.godot/imported/PC Computer - Star Wars Galactic Battlegrounds - Darth Vader.png-4598ccf5802123b94eb5a7f1bdf56efc.ctex"
+uid="uid://coe54bndjo0s2"
+path="res://.godot/imported/PLAY2.PNG-dbba17b216bfc1bb54f51b24ce0b1d63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/PC Computer - Star Wars Galactic Battlegrounds - Darth Vader.png"
-dest_files=["res://.godot/imported/PC Computer - Star Wars Galactic Battlegrounds - Darth Vader.png-4598ccf5802123b94eb5a7f1bdf56efc.ctex"]
+source_file="res://Art/UI/PLAY2.PNG"
+dest_files=["res://.godot/imported/PLAY2.PNG-dbba17b216bfc1bb54f51b24ce0b1d63.ctex"]
 
 [params]
 

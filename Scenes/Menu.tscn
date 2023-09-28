@@ -1,20 +1,20 @@
 [gd_scene load_steps=9 format=3 uid="uid://omlp6707jdpd"]
 
-[ext_resource type="Texture2D" uid="uid://cr0i7136a10nf" path="res://Art/Title.png" id="1_d7wce"]
-[ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_q7brq"]
-[ext_resource type="Texture2D" uid="uid://5kr6sw8iyy1x" path="res://Art/PLAY.PNG" id="2_pjn24"]
-[ext_resource type="Texture2D" uid="uid://coe54bndjo0s2" path="res://Art/PLAY2.PNG" id="3_il30a"]
-[ext_resource type="Texture2D" uid="uid://d0mjvdt8txkeg" path="res://Art/settingsButton.png" id="5_1y7ph"]
-[ext_resource type="Texture2D" uid="uid://3ay3ixbuqecm" path="res://Art/QUIT.png" id="5_dbigp"]
-[ext_resource type="Texture2D" uid="uid://ch210vcldvmea" path="res://Art/QUIT2.png" id="6_n7tuq"]
-[ext_resource type="Texture2D" uid="uid://c1fepw6utd4o7" path="res://Art/archivesButton.png" id="6_xff0u"]
+[ext_resource type="Script" path="res://Scenes/Menu.gd" id="1_q7brq"]
+[ext_resource type="Texture2D" uid="uid://cr0i7136a10nf" path="res://Art/UI/Title.png" id="2_hj0eu"]
+[ext_resource type="Texture2D" uid="uid://5kr6sw8iyy1x" path="res://Art/UI/PLAY.PNG" id="3_0rod1"]
+[ext_resource type="Texture2D" uid="uid://coe54bndjo0s2" path="res://Art/UI/PLAY2.PNG" id="4_msnjr"]
+[ext_resource type="Texture2D" uid="uid://d0mjvdt8txkeg" path="res://Art/UI/settingsButton.png" id="5_ud4a1"]
+[ext_resource type="Texture2D" uid="uid://c1fepw6utd4o7" path="res://Art/UI/archivesButton.png" id="6_guio3"]
+[ext_resource type="Texture2D" uid="uid://3ay3ixbuqecm" path="res://Art/UI/QUIT.png" id="7_14ry0"]
+[ext_resource type="Texture2D" uid="uid://ch210vcldvmea" path="res://Art/UI/QUIT2.png" id="8_ic4q0"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_q7brq")
 
 [node name="GameTitle" type="Sprite2D" parent="."]
 position = Vector2(964, 382)
-texture = ExtResource("1_d7wce")
+texture = ExtResource("2_hj0eu")
 
 [node name="Play" type="TextureButton" parent="."]
 anchors_preset = 8
@@ -29,8 +29,8 @@ offset_bottom = 758.0
 grow_horizontal = 2
 grow_vertical = 2
 action_mode = 0
-texture_normal = ExtResource("2_pjn24")
-texture_pressed = ExtResource("3_il30a")
+texture_normal = ExtResource("3_0rod1")
+texture_pressed = ExtResource("4_msnjr")
 ignore_texture_size = true
 stretch_mode = 6
 
@@ -48,8 +48,8 @@ offset_bottom = 827.0
 grow_horizontal = 2
 grow_vertical = 2
 action_mode = 0
-texture_normal = ExtResource("5_1y7ph")
-texture_pressed = ExtResource("5_1y7ph")
+texture_normal = ExtResource("5_ud4a1")
+texture_pressed = ExtResource("5_ud4a1")
 ignore_texture_size = true
 stretch_mode = 6
 
@@ -67,8 +67,8 @@ offset_bottom = 830.0
 grow_horizontal = 2
 grow_vertical = 2
 action_mode = 0
-texture_normal = ExtResource("6_xff0u")
-texture_pressed = ExtResource("6_xff0u")
+texture_normal = ExtResource("6_guio3")
+texture_pressed = ExtResource("6_guio3")
 ignore_texture_size = true
 stretch_mode = 6
 
@@ -85,8 +85,8 @@ offset_bottom = 915.0
 grow_horizontal = 2
 grow_vertical = 2
 action_mode = 0
-texture_normal = ExtResource("5_dbigp")
-texture_pressed = ExtResource("6_n7tuq")
+texture_normal = ExtResource("7_14ry0")
+texture_pressed = ExtResource("8_ic4q0")
 ignore_texture_size = true
 stretch_mode = 6
 

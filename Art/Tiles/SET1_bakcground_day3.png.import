@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbl8a285myogw"
-path="res://.godot/imported/MENU2.png-24d6bc167f310276587b9b156f132cc9.ctex"
+uid="uid://b8nj3gtbtfdj2"
+path="res://.godot/imported/SET1_bakcground_day3.png-c472b992161f6058d648b478f04cac7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/MENU2.png"
-dest_files=["res://.godot/imported/MENU2.png-24d6bc167f310276587b9b156f132cc9.ctex"]
+source_file="res://Art/Tiles/SET1_bakcground_day3.png"
+dest_files=["res://.godot/imported/SET1_bakcground_day3.png-c472b992161f6058d648b478f04cac7e.ctex"]
 
 [params]
 
