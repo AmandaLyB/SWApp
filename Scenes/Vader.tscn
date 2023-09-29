@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://hlf7g6xk8fjx"]
+
+[ext_resource type="Texture2D" uid="uid://d0dgi785ahnmu" path="res://Art/Sprites/PC Computer - Star Wars Galactic Battlegrounds - Darth Vader.png" id="1_qei76"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7lrkg"]
+height = 54.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryh3b"]
+atlas = ExtResource("1_qei76")
+region = Rect2(1180, 0, 35, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4stm"]
+atlas = ExtResource("1_qei76")
+region = Rect2(1215, 0, 35, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag5l4"]
+atlas = ExtResource("1_qei76")
+region = Rect2(1250, 0, 35, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ly2ma"]
+atlas = ExtResource("1_qei76")
+region = Rect2(1285, 0, 35, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_67o5c"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ryh3b")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_e4stm")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ag5l4")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ly2ma")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ag5l4")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_e4stm")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Vader" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("CapsuleShape2D_7lrkg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_67o5c")
+animation = &"Idle"
+frame_progress = 0.991655
+metadata/_edit_lock_ = true
