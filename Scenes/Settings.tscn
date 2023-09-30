@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c17hfqmneshtf"]
+[gd_scene load_steps=6 format=3 uid="uid://c17hfqmneshtf"]
 
 [ext_resource type="Script" path="res://Scenes/Settings.gd" id="1_c62jf"]
 [ext_resource type="Theme" uid="uid://dj4gh1nn7ignp" path="res://Themes/settingtheme.tres" id="2_vdvx6"]
+[ext_resource type="Script" path="res://Scenes/masterslider.gd" id="3_eu515"]
+[ext_resource type="Script" path="res://Scenes/musicslider.gd" id="4_l041q"]
+[ext_resource type="Script" path="res://Scenes/sfxslider.gd" id="5_3d2jn"]
 
 [node name="Settings" type="Node2D"]
 script = ExtResource("1_c62jf")
@@ -27,11 +30,11 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="HeaderVBox" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/HeaderVBox"]
 layout_mode = 2
 size_flags_vertical = 2
 theme_override_font_sizes/font_size = 100
@@ -40,18 +43,47 @@ text = "Settings
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonsVBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="VolumeVBox" type="VBoxContainer" parent="MarginContainer/HeaderVBox"]
+layout_mode = 2
+
+[node name="mastervol" type="Label" parent="MarginContainer/HeaderVBox/VolumeVBox"]
+layout_mode = 2
+text = "Master volume"
+
+[node name="masterslider" type="HSlider" parent="MarginContainer/HeaderVBox/VolumeVBox"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_eu515")
+
+[node name="musicvol" type="Label" parent="MarginContainer/HeaderVBox/VolumeVBox"]
+layout_mode = 2
+text = "Music volume"
+
+[node name="musicslider" type="HSlider" parent="MarginContainer/HeaderVBox/VolumeVBox"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_l041q")
+
+[node name="sfxvol" type="Label" parent="MarginContainer/HeaderVBox/VolumeVBox"]
+layout_mode = 2
+text = "Sound effects volume"
+
+[node name="sfxslider" type="HSlider" parent="MarginContainer/HeaderVBox/VolumeVBox"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_3d2jn")
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="MarginContainer/HeaderVBox"]
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer/ButtonsVBox"]
+[node name="Back" type="Button" parent="MarginContainer/HeaderVBox/ButtonsVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-focus_neighbor_top = NodePath(".")
-focus_neighbor_bottom = NodePath(".")
-focus_next = NodePath(".")
-focus_previous = NodePath(".")
 text = "Back"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/HeaderVBox/ButtonsVBox/Back" to="." method="_on_back_pressed"]
