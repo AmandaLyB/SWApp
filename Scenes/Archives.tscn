@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cygxcc2urgb44"]
+[gd_scene load_steps=4 format=3 uid="uid://cygxcc2urgb44"]
 
 [ext_resource type="Script" path="res://Scenes/Archives.gd" id="1_07ovb"]
 [ext_resource type="Theme" uid="uid://dj4gh1nn7ignp" path="res://Themes/settingtheme.tres" id="2_2fmxd"]
+[ext_resource type="Script" path="res://Scenes/HTTPRequestSWAPI.gd" id="3_kg30p"]
 
 [node name="Archives" type="Node2D"]
 script = ExtResource("1_07ovb")
@@ -53,5 +54,9 @@ focus_neighbor_bottom = NodePath(".")
 focus_next = NodePath(".")
 focus_previous = NodePath(".")
 text = "Back"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+use_threads = true
+script = ExtResource("3_kg30p")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonsVBox/Back" to="." method="_on_back_pressed"]
