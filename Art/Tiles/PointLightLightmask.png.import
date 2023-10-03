@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtha622evnxxs"
-path="res://.godot/imported/SET1_background_obj.png-4c12dbc7a34994b908b61b6574b3b0af.ctex"
+uid="uid://bh23piuaee48a"
+path="res://.godot/imported/PointLightLightmask.png-cee039be1a62e80ed085664fac249cad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Tiles/SET1_background_obj.png"
-dest_files=["res://.godot/imported/SET1_background_obj.png-4c12dbc7a34994b908b61b6574b3b0af.ctex"]
+source_file="res://Art/Tiles/PointLightLightmask.png"
+dest_files=["res://.godot/imported/PointLightLightmask.png-cee039be1a62e80ed085664fac249cad.ctex"]
 
 [params]
 
