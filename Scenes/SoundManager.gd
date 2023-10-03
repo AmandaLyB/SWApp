@@ -6,13 +6,23 @@ func _on_back_pressed() -> void:
 var sound_effects: Dictionary = {}
 var background_music: AudioStreamPlayer = AudioStreamPlayer.new()
 
+var music_tracks: Array = [
+	"res://Audio/Background/starfleet-command-150605.mp3",
+	"res://Audio/Background/cinematic-battle-music-star-wars-style-148641.mp3",
+	"res://Audio/Background/cinematic-battle-music-star-wars-style-148641.mp3",
+	"res://Audio/Background/war-is-coming-103662.mp3"
+]
+
 func _ready():
 	if background_music.get_parent() == null:
 		background_music.name = "BackgroundMusic"
 		add_child(background_music)
-	background_music.bus = "music"
-	background_music.play()
-	
+		background_music.bus = "music"
+		
+		if !background_music.is_playing():
+			var random_track_index = randi() % music_tracks.size()
+			var random_music_path = music_tracks[random_track_index]
+			play_music(random_music_path)	
 	
 	# Add sound effects to the dictionary some examples may be
 	#sound_effects["explosion"] = load("res://path_to_sound/explosion.wav")
@@ -21,10 +31,6 @@ func _ready():
 	set_master_volume(1.0)
 	set_music_volume(0.8)
 	set_effects_volume(0.7)
-
-	background_music.name = "BackgroundMusic"
-	add_child(background_music)
-	play_music("res://Audio/Background/starfleet-command-150605.mp3")
 
 func play_sound_effect(effect_name: String, volume: float = 1.0):
 	if sound_effects.has(effect_name):

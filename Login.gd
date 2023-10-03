@@ -10,7 +10,6 @@ func _ready():
 	$HTTPRequest.request("http://localhost:3000/api#/")
 	print("connected to back end")
 	username.grab_focus()
-	password.grab_focus()
 
 func _on_request_completed(result, response_code, headers, body):
 	var json = JSON.parse_string(body.get_string_from_utf8())
