@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5vkuviq2sg3u"]
+[gd_scene load_steps=4 format=3 uid="uid://c5vkuviq2sg3u"]
 
 [ext_resource type="Script" path="res://Login.gd" id="1_g8fed"]
 [ext_resource type="Theme" uid="uid://dj4gh1nn7ignp" path="res://Themes/settingtheme.tres" id="2_b8kjk"]
+[ext_resource type="PackedScene" uid="uid://dodgf2q7rdsde" path="res://Scenes/login_bg.tscn" id="3_ybf0i"]
 
 [node name="Login" type="Node2D"]
 script = ExtResource("1_g8fed")
@@ -15,6 +16,8 @@ offset_bottom = 1080.0
 theme = ExtResource("2_b8kjk")
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
+visible = false
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.0666667, 0.0862745, 0.121569, 1)
@@ -38,14 +41,15 @@ theme_override_constants/margin_bottom = 32
 [node name="HeaderVBox" type="VBoxContainer" parent="Control/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("2_b8kjk")
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/MarginContainer/HeaderVBox"]
 layout_mode = 2
 size_flags_vertical = 2
+theme = ExtResource("2_b8kjk")
 theme_override_font_sizes/font_size = 100
-text = "Login
-"
+text = "Login"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -65,7 +69,7 @@ size_flags_vertical = 3
 
 [node name="username" type="Label" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox/VBoxContainer"]
 layout_mode = 2
-text = "user name"
+text = "uSer nAmE"
 
 [node name="inputUsername" type="LineEdit" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox/VBoxContainer"]
 layout_mode = 2
@@ -77,7 +81,7 @@ size_flags_vertical = 3
 
 [node name="password" type="Label" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox/VBoxContainer2"]
 layout_mode = 2
-text = "password"
+text = "PASSwoRd"
 
 [node name="inputPassword" type="LineEdit" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox/VBoxContainer2"]
 layout_mode = 2
@@ -96,6 +100,8 @@ text = "Submit"
 [node name="Button" type="Button" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox/ButtonsVBox"]
 layout_mode = 2
 text = "quit"
+
+[node name="login_bg" parent="Control" instance=ExtResource("3_ybf0i")]
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 

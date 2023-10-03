@@ -1,11 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsan41150ncqa"]
+[gd_scene load_steps=9 format=3 uid="uid://dsan41150ncqa"]
 
 [ext_resource type="Script" path="res://Scenes/day_bg.gd" id="1_a0b3o"]
 [ext_resource type="Texture2D" uid="uid://c3303tf1k85xu" path="res://Art/Tiles/SET1_bakcground_day1.png" id="1_tngom"]
 [ext_resource type="Texture2D" uid="uid://b5nj81ckui7yu" path="res://Art/Background/junglemountain1.png" id="2_hjsq8"]
 [ext_resource type="Texture2D" uid="uid://deo2pdsa4oexa" path="res://Art/Background/junglemountain3.png" id="3_23pyb"]
 [ext_resource type="Texture2D" uid="uid://dg0vc8lhb3ndj" path="res://Art/Background/junglemountain2.png" id="4_g1ob6"]
-[ext_resource type="Texture2D" uid="uid://dmdihq1n63ubv" path="res://Art/Background/xwing1.png" id="5_t5srg"]
+[ext_resource type="Texture2D" uid="uid://kivoxgxbl6ta" path="res://Art/Background/xwing3.png" id="6_m3df2"]
+[ext_resource type="Script" path="res://Scenes/Xwing3.gd" id="7_h7oiq"]
+
+[sub_resource type="Curve2D" id="Curve2D_6uck7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 176, 320, 0, 0, 0, 0, 112, 456, 0, 0, 0, 0, 216, 504, 0, 0, 0, 0, 292, 452, 0, 0, 0, 0, 468, 436, 0, 0, 0, 0, 320, 400, 0, 0, 0, 0, 280, 360, 0, 0, 0, 0, 244, 300, 0, 0, 0, 0, 256, 208, 0, 0, 0, 0, 128, 256, 0, 0, 0, 0, 176, 320)
+}
+point_count = 11
 
 [node name="DayBG" type="ParallaxBackground"]
 script = ExtResource("1_a0b3o")
@@ -57,7 +64,19 @@ position = Vector2(1909, 948)
 scale = Vector2(2.38281, 2.38281)
 texture = ExtResource("3_23pyb")
 
-[node name="Xwing1" type="Sprite2D" parent="."]
-position = Vector2(251, 274)
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(28, 28)
+curve = SubResource("Curve2D_6uck7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(175.703, 320.63)
+rotation = 1.5708
+progress = 1.0
+rotates = false
+
+[node name="Xwing3" type="Sprite2D" parent="Path2D/PathFollow2D"]
+position = Vector2(8.1308, 0)
+rotation = -1.5708
 scale = Vector2(1.7, 1.7)
-texture = ExtResource("5_t5srg")
+texture = ExtResource("6_m3df2")
+script = ExtResource("7_h7oiq")
