@@ -15,9 +15,10 @@
 [resource]
 default_font = ExtResource("1_cipmj")
 default_font_size = 50
-Button/colors/font_color = Color(0.167969, 0.210938, 0.265625, 1)
-Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_color = Color(0.168627, 0.211765, 0.266667, 1)
+Button/colors/font_focus_color = Color(0.168627, 0.211765, 0.266667, 1)
 Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(0.168627, 0.211765, 0.266667, 1)
 Button/colors/font_outline_color = Color(0.394531, 0.542969, 0.609375, 1)
 Button/colors/font_pressed_color = Color(0.168627, 0.211765, 0.266667, 0)
 Button/constants/h_separation = 2
