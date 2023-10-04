@@ -7,7 +7,6 @@ func _ready() -> void:
 	self.set_use_threads(true)
 	var headers : PackedStringArray = []
 	self.connect("request_completed", doSomething)
-	self.request("https://swapi.dev/api/people/1/")
 	
 func doSomething(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray):
 	if(response_code == 200):
