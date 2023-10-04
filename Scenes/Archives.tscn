@@ -37,20 +37,23 @@ alignment = 1
 [node name="header" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 125
 text = "Archives
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="swapiname" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_y4rwi")
-theme_override_font_sizes/font_size = 36
-autowrap_mode = 3
-
 [node name="characterText" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="spacer" type="Label" parent="MarginContainer/VBoxContainer/characterText"]
+layout_mode = 2
+text = "           "
+
+[node name="factionsymbol" type="TextureRect" parent="MarginContainer/VBoxContainer/characterText"]
+layout_mode = 2
+expand_mode = 3
+stretch_mode = 3
 
 [node name="characterinfotags" type="VBoxContainer" parent="MarginContainer/VBoxContainer/characterText"]
 layout_mode = 2
@@ -98,33 +101,40 @@ size_flags_horizontal = 3
 
 [node name="swapiname" type="Label" parent="MarginContainer/VBoxContainer/characterText/swapiinfobox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
+theme_override_fonts/font = ExtResource("3_y4rwi")
+theme_override_font_sizes/font_size = 54
 text = "placeholder info"
 
 [node name="swapiheight" type="Label" parent="MarginContainer/VBoxContainer/characterText/swapiinfobox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
+theme_override_fonts/font = ExtResource("3_y4rwi")
+theme_override_font_sizes/font_size = 54
 text = "placeholder info"
 
 [node name="swapimass" type="Label" parent="MarginContainer/VBoxContainer/characterText/swapiinfobox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
+theme_override_fonts/font = ExtResource("3_y4rwi")
+theme_override_font_sizes/font_size = 54
 text = "placeholder info"
 
 [node name="swapieye" type="Label" parent="MarginContainer/VBoxContainer/characterText/swapiinfobox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
+theme_override_fonts/font = ExtResource("3_y4rwi")
+theme_override_font_sizes/font_size = 54
 text = "placeholder info"
 
 [node name="swapibirth" type="Label" parent="MarginContainer/VBoxContainer/characterText/swapiinfobox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
+theme_override_fonts/font = ExtResource("3_y4rwi")
+theme_override_font_sizes/font_size = 54
 text = "placeholder info"
 
 [node name="swapihome" type="Label" parent="MarginContainer/VBoxContainer/characterText/swapiinfobox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
+theme_override_fonts/font = ExtResource("3_y4rwi")
+theme_override_font_sizes/font_size = 54
 text = "placeholder info"
+vertical_alignment = 3
 
 [node name="controlbuttonsbox" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

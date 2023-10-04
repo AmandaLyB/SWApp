@@ -28,7 +28,7 @@ func _ready():
 	#sound_effects["explosion"] = load("res://path_to_sound/explosion.wav")
 	#sound_effects["pickup"] = load("res://path_to_sound/pickup.wav")
 
-	set_master_volume(1.0)
+	set_master_volume(0.5)
 	set_music_volume(0.8)
 	set_effects_volume(0.7)
 
@@ -72,6 +72,6 @@ func save_settings() -> void:
 func load_settings() -> void:
 	var config_file = ConfigFile.new()
 	if config_file.load("user://audio_settings.cfg") == OK:
-		set_master_volume(float(config_file.get_section_key("Audio", "master_volume", "1.0")))
+		set_master_volume(float(config_file.get_section_key("Audio", "master_volume", "0.5")))
 		set_music_volume(float(config_file.get_section_key("Audio", "music_volume", "0.8")))
 		set_effects_volume(float(config_file.get_section_key("Audio", "effects_volume", "0.7")))
