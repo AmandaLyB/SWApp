@@ -17,8 +17,11 @@ func _on_request_completed(result, response_code, headers, body):
 	var json = JSON.parse_string(body.get_string_from_utf8())
 	#await get_tree().create_timer(2).timeout
 	print(response_code)
-	if response_code != 200:
+	if response_code == 401:
+		authorizationFailed.text = "invalid login credentials."
+	elif response_code != 200:
 		print("Problem with request.")
+		authorizationFailed.text = "Something went wrong, try again."
 	else:
 		print("Connection successful.")
 		get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
@@ -44,15 +47,12 @@ func _on_submit_pressed():
 			"username": username.text,
 			"password": password.text
 		}
-		var query = JSON.stringify(data)
+		var query = JSON.stringify(data, "",false )
 		print(query)
 		var headers = ["Content-Type: application/json"]
-		$HTTPRequest.request("localhost:3000/api/auth/login", headers, HTTPClient.METHOD_POST, query)
-		#$HTTPRequest.request_completed.connect(_on_request_completed)
-		if $HTTPRequest.RESULT_SUCCESS:
-			get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
-		else:
-			authorizationFailed.text = "Something went wrong, try again."
-			#get_tree().change_scene_to_file("res://Scenes/Login.tscn")
+		
+		$HTTPRequest.request_completed.connect(_on_request_completed)
+		$HTTPRequest.request("http://localhost:3000/auth/login", headers, HTTPClient.METHOD_POST, query)
+
 func _on_button_pressed():
 	get_tree().quit()
