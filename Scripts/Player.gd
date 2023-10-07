@@ -4,8 +4,12 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const gravity = 1200
+var health = 10
+var damage = 1
+var isDead = false
 
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision_shape : CollisionShape2D = $CollisionShape2D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 #var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -38,4 +42,12 @@ func _physics_process(delta):
 			animated_sprite.play("Idle")
 
 	move_and_slide()
+	
 
+func take_damage(damage_taken):
+	if health > 0:
+		health -= damage_taken
+		print(health)
+	if health <= 0:
+		isDead = true
+		print(isDead)
