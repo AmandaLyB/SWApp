@@ -3,8 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-const gravity = 1200
-var health = 10
+const gravity = 1000
+var health = 100
 var damage = 1
 var isDead = false
 
@@ -40,14 +40,11 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if velocity.y == 0:
 			animated_sprite.play("Idle")
-
+	
 	move_and_slide()
 	
-
-func take_damage(damage_taken):
-	if health > 0:
-		health -= damage_taken
-		print(health)
-	if health <= 0:
-		isDead = true
-		print(isDead)
+	if health < 0:
+		print("Player died!")
+		queue_free()
+		get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
+	

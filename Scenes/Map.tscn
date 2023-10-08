@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c7vvamjrpkpwr"]
+[gd_scene load_steps=23 format=3 uid="uid://c7vvamjrpkpwr"]
 
 [ext_resource type="Script" path="res://Scenes/Map.gd" id="1_srjri"]
 [ext_resource type="PackedScene" uid="uid://dg6s6vyhrq1sr" path="res://Scenes/Player.tscn" id="2_64vdv"]
@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://hlf7g6xk8fjx" path="res://Scenes/Vader.tscn" id="6_prje0"]
 [ext_resource type="Texture2D" uid="uid://bh23piuaee48a" path="res://Art/Tiles/PointLightLightmask.png" id="7_veje6"]
 [ext_resource type="Texture2D" uid="uid://bnvenwbd4vopb" path="res://Art/Tiles/SET1_decorative_obj.png" id="10_1uavh"]
+[ext_resource type="Theme" uid="uid://dvqg3mlr181xd" path="res://Themes/default_theme.tres" id="10_p4fg2"]
 [ext_resource type="Texture2D" uid="uid://b5fvs7oia3g86" path="res://Art/Tiles/SET1_Mainlev_build.png" id="11_d2468"]
+[ext_resource type="Script" path="res://Scenes/HP.gd" id="12_t87p0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ovqhk"]
 texture = ExtResource("4_qb7c1")
@@ -11305,22 +11307,38 @@ layer_0/tile_data = PackedInt32Array(2228237, 196608, 0, 2228238, 262144, 0, 222
 [node name="Player" parent="Player" instance=ExtResource("2_64vdv")]
 position = Vector2(240, 552)
 
-[node name="TextureButton" type="TextureButton" parent="Player/Player"]
-offset_left = 488.0
-offset_top = -256.0
-offset_right = 616.0
-offset_bottom = -216.0
-texture_normal = ExtResource("4_lb85g")
-texture_pressed = ExtResource("5_34kt8")
-ignore_texture_size = true
-stretch_mode = 6
-
 [node name="PointLight2D" type="PointLight2D" parent="Player/Player"]
 position = Vector2(45, -44)
 color = Color(0.301961, 0.788235, 0.894118, 1)
 energy = 0.5
 texture = ExtResource("7_veje6")
 texture_scale = 20.0
+
+[node name="UI" type="CanvasLayer" parent="Player"]
+
+[node name="HP" type="Label" parent="Player/UI"]
+offset_left = 22.0
+offset_top = 19.0
+offset_right = 135.0
+offset_bottom = 103.0
+theme = ExtResource("10_p4fg2")
+text = "HP: "
+script = ExtResource("12_t87p0")
+
+[node name="TextureButton" type="TextureButton" parent="Player/UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = 45.0
+offset_right = -172.0
+offset_bottom = 85.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("4_lb85g")
+texture_pressed = ExtResource("5_34kt8")
+ignore_texture_size = true
+stretch_mode = 6
 
 [node name="Mobs" type="Node2D" parent="."]
 
@@ -11331,4 +11349,4 @@ position = Vector2(637, 453)
 tile_set = SubResource("TileSet_dodoq")
 format = 2
 
-[connection signal="pressed" from="Player/Player/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Player/UI/TextureButton" to="." method="_on_texture_button_pressed"]
