@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://brtfdmi6rd61d"]
+
+[ext_resource type="VideoStream" path="res://Art/Cinematics/StarWars_Shadows_of_Yavin_IV_Intro.ogv" id="1_whxjw"]
+[ext_resource type="Script" path="res://Scenes/Intro_Cinematic.gd" id="2_tfl8m"]
+
+[node name="Intro_Cinematic" type="Node2D"]
+script = ExtResource("2_tfl8m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Camera2D"]
+offset_left = -960.0
+offset_top = -539.0
+offset_right = 955.0
+offset_bottom = 539.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Camera2D/AspectRatioContainer"]
+layout_mode = 2
+stream = ExtResource("1_whxjw")
+autoplay = true
+expand = true
+
+[connection signal="finished" from="Camera2D/AspectRatioContainer/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
