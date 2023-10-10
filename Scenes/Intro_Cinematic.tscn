@@ -16,12 +16,25 @@ offset_bottom = 630.0
 color = Color(0, 0, 0, 1)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Camera2D"]
-offset_left = -962.0
-offset_top = -539.0
-offset_right = 958.0
-offset_bottom = 541.0
 stream = ExtResource("1_whxjw")
 autoplay = true
 expand = true
 
+[node name="Button" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 711.0
+offset_top = 252.0
+offset_right = 827.0
+offset_bottom = 283.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Skip Cutscene"
+
 [connection signal="finished" from="Camera2D/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

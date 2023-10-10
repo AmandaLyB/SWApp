@@ -1,16 +1,64 @@
 extends Node2D
 
-func _ready():
-	var sound_manager = SoundManager
+var isPlaying = false
 
-func _on_settings_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Settings.tscn")
-	
-func _on_archives_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Archives.tscn")
+#func _ready():
 
 func _on_play_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Level_Select.tscn")
+	var level1SelectButton = $Control/MarginContainer/VBoxContainer2/PlayButton
+	var level2SelectButton = $Control/MarginContainer/VBoxContainer2/Archives
+	var level3SelectButton = $Control/MarginContainer/VBoxContainer2/Settings
+	var backButton = $Control/MarginContainer/VBoxContainer2/QuitButton
+	level1SelectButton.text = "Level 1: Forests of Yavin IV"	
+	level1SelectButton.connect("pressed", _on_level1_button_pressed)
+	level2SelectButton.text = "Level 2: Placeholder"	
+	level2SelectButton.connect("pressed", _on_level2_button_pressed)
+	level3SelectButton.text = "Level 3: Placeholder"	
+	level3SelectButton.connect("pressed", _on_level3_button_pressed)
+	backButton.text = "back"	
+	backButton.connect("pressed", _on_back_button_pressed)
+	
+	isPlaying = true
 
+func _on_level1_button_pressed():
+	if isPlaying:
+		get_tree().change_scene_to_file("res://Scenes/Intro_Cinematic.tscn")
+
+func _on_level2_button_pressed():
+	if isPlaying:
+		get_tree().change_scene_to_file("res://Scenes/Intro_Cinematic.tscn")
+
+func _on_level3_button_pressed():
+	if isPlaying:
+		get_tree().change_scene_to_file("res://Scenes/Intro_Cinematic.tscn")
+
+func _on_back_button_pressed():
+	if isPlaying:
+		var level1SelectButton = $Control/MarginContainer/VBoxContainer2/PlayButton
+		var level2SelectButton = $Control/MarginContainer/VBoxContainer2/Archives
+		var level3SelectButton = $Control/MarginContainer/VBoxContainer2/Settings
+		var backButton = $Control/MarginContainer/VBoxContainer2/QuitButton
+		level1SelectButton.text = "play"	
+		level1SelectButton.connect("pressed", _on_play_button_pressed)
+		level2SelectButton.text = "archives"	
+		level2SelectButton.connect("pressed", _on_archives_pressed)
+		level3SelectButton.text = "settings"	
+		level3SelectButton.connect("pressed", _on_settings_pressed)
+		backButton.text = "quit"
+		backButton.disconnect("pressed", _on_back_button_pressed)
+		backButton.connect("pressed", _on_quit_button_pressed)
+		
+		isPlaying = false
+
+func _on_archives_pressed():
+	if not isPlaying:
+		get_tree().change_scene_to_file("res://Scenes/Archives.tscn")
+
+func _on_settings_pressed():
+	if not isPlaying:
+		get_tree().change_scene_to_file("res://Scenes/Settings.tscn")
+	
 func _on_quit_button_pressed():
-	get_tree().quit()
+	if not isPlaying:
+		get_tree().quit()
+
