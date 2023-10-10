@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="SWMobileApp"
-run/main_scene="res://Scenes/Menu.tscn"
+run/main_scene="res://Scenes/Login.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SoundManager="*res://Scenes/sound_manager.tscn"
 
 [display]
 
