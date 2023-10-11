@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckgeng20mu4bp"]
+
+[ext_resource type="Script" path="res://Scripts/Level_Select.gd" id="1_tsren"]
+[ext_resource type="PackedScene" uid="uid://dsan41150ncqa" path="res://Scenes/UtilityScenes/day_bg.tscn" id="2_wwbxf"]
+[ext_resource type="Texture2D" uid="uid://jm0ei54ln7si" path="res://Art/UI/SkywalkerTitle2.png" id="3_3yieg"]
+[ext_resource type="Theme" uid="uid://dvqg3mlr181xd" path="res://Themes/default_theme.tres" id="4_g0fq2"]
+
+[node name="Level_Select" type="Node2D"]
+script = ExtResource("1_tsren")
+
+[node name="DayBG" parent="." instance=ExtResource("2_wwbxf")]
+
+[node name="GameTitle" type="Sprite2D" parent="."]
+position = Vector2(963.376, 301.75)
+scale = Vector2(1.40078, 1.40078)
+texture = ExtResource("3_3yieg")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 660.0
+offset_right = 1924.0
+offset_bottom = 994.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_g0fq2")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_top = -114.0
+offset_right = 1921.0
+offset_bottom = 965.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Level1" type="Button" parent="Control/MarginContainer/VBoxContainer2"]
+layout_direction = 1
+layout_mode = 2
+text = "Level 1: Forests of Yavin iv"
+
+[node name="Level2" type="Button" parent="Control/MarginContainer/VBoxContainer2"]
+layout_direction = 1
+layout_mode = 2
+text = "Level 2: Placeholder"
+
+[node name="Level3" type="Button" parent="Control/MarginContainer/VBoxContainer2"]
+layout_direction = 1
+layout_mode = 2
+text = "Level 3: Placeholder"
+
+[node name="Level4" type="Button" parent="Control/MarginContainer/VBoxContainer2"]
+layout_direction = 1
+layout_mode = 2
+text = "Level 4: Placeholder"
+
+[node name="BackButton" type="Button" parent="Control/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Back
+"
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer2/Level1" to="." method="_on_level1_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer2/Level2" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer2/Level3" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer2/Level4" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer2/BackButton" to="." method="_on_back_button_pressed"]
