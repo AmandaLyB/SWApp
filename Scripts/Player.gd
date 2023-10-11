@@ -19,7 +19,7 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("MoveLeft", "MoveRight")
 	# Handle Jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -46,5 +46,5 @@ func _physics_process(delta):
 	if health < 0:
 		print("Player died!")
 		queue_free()
-		get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/MainScenes/Menu.tscn")
 	

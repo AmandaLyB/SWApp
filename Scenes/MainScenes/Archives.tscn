@@ -1,0 +1,179 @@
+[gd_scene load_steps=6 format=3 uid="uid://cygxcc2urgb44"]
+
+[ext_resource type="Script" path="res://Scripts/Archives.gd" id="1_07ovb"]
+[ext_resource type="Theme" uid="uid://dj4gh1nn7ignp" path="res://Themes/settingtheme.tres" id="2_2fmxd"]
+[ext_resource type="Script" path="res://Scripts/HTTPRequestSWAPI.gd" id="3_kg30p"]
+[ext_resource type="FontFile" uid="uid://c6qhfk3phjwa5" path="res://Themes/Font/soloist1.ttf" id="3_y4rwi"]
+[ext_resource type="Script" path="res://Scripts/HTTPRequestHome.gd" id="5_8dln3"]
+
+[node name="Archives" type="Node2D"]
+script = ExtResource("1_07ovb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.0666667, 0.0862745, 0.121569, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 3.0
+offset_right = 1921.0
+offset_bottom = 1075.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2fmxd")
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="header" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_font_sizes/font_size = 125
+text = "Archives
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="characterText" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="spacer" type="Label" parent="MarginContainer/VBoxContainer/characterText"]
+layout_mode = 2
+text = "           "
+
+[node name="factionsymbol" type="TextureRect" parent="MarginContainer/VBoxContainer/characterText"]
+layout_mode = 2
+expand_mode = 3
+stretch_mode = 3
+
+[node name="characterinfotags" type="VBoxContainer" parent="MarginContainer/VBoxContainer/characterText"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="charname" type="Label" parent="MarginContainer/VBoxContainer/characterText/characterinfotags"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "Character Name : "
+horizontal_alignment = 2
+
+[node name="charheight" type="Label" parent="MarginContainer/VBoxContainer/characterText/characterinfotags"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "HEigHT : "
+horizontal_alignment = 2
+
+[node name="charmass" type="Label" parent="MarginContainer/VBoxContainer/characterText/characterinfotags"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "MASS : "
+horizontal_alignment = 2
+
+[node name="chareye" type="Label" parent="MarginContainer/VBoxContainer/characterText/characterinfotags"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "EYE coloR : "
+horizontal_alignment = 2
+
+[node name="charbirth" type="Label" parent="MarginContainer/VBoxContainer/characterText/characterinfotags"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "BiRTHYEAR : "
+horizontal_alignment = 2
+
+[node name="charhome" type="Label" parent="MarginContainer/VBoxContainer/characterText/characterinfotags"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "HomE WoRlD : "
+horizontal_alignment = 2
+
+[node name="swapiinfobox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/characterText"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="swapiname" type="Label" parent="MarginContainer/VBoxContainer/characterText/swapiinfobox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_y4rwi")
+theme_override_font_sizes/font_size = 54
+text = "placeholder info"
+
+[node name="swapiheight" type="Label" parent="MarginContainer/VBoxContainer/characterText/swapiinfobox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_y4rwi")
+theme_override_font_sizes/font_size = 54
+text = "placeholder info"
+
+[node name="swapimass" type="Label" parent="MarginContainer/VBoxContainer/characterText/swapiinfobox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_y4rwi")
+theme_override_font_sizes/font_size = 54
+text = "placeholder info"
+
+[node name="swapieye" type="Label" parent="MarginContainer/VBoxContainer/characterText/swapiinfobox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_y4rwi")
+theme_override_font_sizes/font_size = 54
+text = "placeholder info"
+
+[node name="swapibirth" type="Label" parent="MarginContainer/VBoxContainer/characterText/swapiinfobox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_y4rwi")
+theme_override_font_sizes/font_size = 54
+text = "placeholder info"
+
+[node name="swapihome" type="Label" parent="MarginContainer/VBoxContainer/characterText/swapiinfobox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_y4rwi")
+theme_override_font_sizes/font_size = 54
+text = "placeholder info"
+vertical_alignment = 3
+
+[node name="controlbuttonsbox" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+
+[node name="back" type="Button" parent="MarginContainer/VBoxContainer/controlbuttonsbox"]
+layout_mode = 2
+text = "back"
+
+[node name="spacer" type="Label" parent="MarginContainer/VBoxContainer/controlbuttonsbox"]
+layout_mode = 2
+text = "                 "
+
+[node name="exit" type="Button" parent="MarginContainer/VBoxContainer/controlbuttonsbox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+text = "exit"
+
+[node name="spacer2" type="Label" parent="MarginContainer/VBoxContainer/controlbuttonsbox"]
+layout_mode = 2
+text = "                 "
+
+[node name="next" type="Button" parent="MarginContainer/VBoxContainer/controlbuttonsbox"]
+layout_mode = 2
+text = "next"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+use_threads = true
+script = ExtResource("3_kg30p")
+
+[node name="HTTPRequestHome" type="HTTPRequest" parent="."]
+script = ExtResource("5_8dln3")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/controlbuttonsbox/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/controlbuttonsbox/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/controlbuttonsbox/next" to="." method="_on_next_pressed"]
