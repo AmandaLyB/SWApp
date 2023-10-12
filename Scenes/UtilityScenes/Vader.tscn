@@ -106,7 +106,6 @@ frame_progress = 0.424277
 metadata/_edit_lock_ = true
 
 [node name="PlayerDetectionArea" type="Area2D" parent="."]
-visible = false
 position = Vector2(0, -36)
 metadata/_edit_lock_ = true
 
