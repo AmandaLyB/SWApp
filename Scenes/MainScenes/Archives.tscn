@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cygxcc2urgb44"]
+[gd_scene load_steps=7 format=3 uid="uid://cygxcc2urgb44"]
 
 [ext_resource type="Script" path="res://Scripts/Archives.gd" id="1_07ovb"]
 [ext_resource type="Theme" uid="uid://dj4gh1nn7ignp" path="res://Themes/settingtheme.tres" id="2_2fmxd"]
 [ext_resource type="Script" path="res://Scripts/HTTPRequestSWAPI.gd" id="3_kg30p"]
 [ext_resource type="FontFile" uid="uid://c6qhfk3phjwa5" path="res://Themes/Font/soloist1.ttf" id="3_y4rwi"]
 [ext_resource type="Script" path="res://Scripts/HTTPRequestHome.gd" id="5_8dln3"]
+[ext_resource type="AudioStream" uid="uid://bgrowgo3olssl" path="res://Audio/Background/star-wars-style-march-165111.mp3" id="6_n4ydd"]
 
 [node name="Archives" type="Node2D"]
 script = ExtResource("1_07ovb")
@@ -173,6 +174,12 @@ script = ExtResource("3_kg30p")
 
 [node name="HTTPRequestHome" type="HTTPRequest" parent="."]
 script = ExtResource("5_8dln3")
+
+[node name="backgroundmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_n4ydd")
+volume_db = -14.444
+autoplay = true
+bus = &"music"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/controlbuttonsbox/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/controlbuttonsbox/exit" to="." method="_on_exit_pressed"]

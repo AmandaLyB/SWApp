@@ -1,9 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://dg6s6vyhrq1sr"]
+[gd_scene load_steps=25 format=3 uid="uid://dg6s6vyhrq1sr"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_xnq8h"]
 [ext_resource type="Texture2D" uid="uid://bh8p31ffcair8" path="res://Art/Sprites/LukeIdleCentered.png" id="2_k3rj5"]
 [ext_resource type="Texture2D" uid="uid://ca6y5ufsbc05u" path="res://Art/Sprites/LukeSpriteJumpCentered.png" id="3_5ne8c"]
 [ext_resource type="Texture2D" uid="uid://i5bpn25xwddp" path="res://Art/Sprites/LukeSprite_LightSaberRun_Centered.png" id="4_ifr8f"]
+[ext_resource type="Texture2D" uid="uid://dxeaim545edmf" path="res://Art/UI/leftButton.png" id="5_kh1ku"]
+[ext_resource type="Texture2D" uid="uid://cbj8o623tkiwl" path="res://Art/UI/rightButton.png" id="6_5gvdm"]
+[ext_resource type="Texture2D" uid="uid://c76iwlr78qbdb" path="res://Art/UI/circleButton.png" id="7_iojwq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ykr0f"]
 atlas = ExtResource("2_k3rj5")
@@ -147,3 +150,18 @@ shape = SubResource("RectangleShape2D_2foj3")
 position = Vector2(0, -35)
 offset = Vector2(0, -25)
 zoom = Vector2(2, 2)
+
+[node name="moveL" type="TouchScreenButton" parent="Camera2D"]
+position = Vector2(-390, 89)
+texture_normal = ExtResource("5_kh1ku")
+action = "MoveLeft"
+
+[node name="moveR" type="TouchScreenButton" parent="Camera2D"]
+position = Vector2(-278, 89)
+texture_normal = ExtResource("6_5gvdm")
+action = "MoveRight"
+
+[node name="jump" type="TouchScreenButton" parent="Camera2D"]
+position = Vector2(312, 90)
+texture_normal = ExtResource("7_iojwq")
+action = "Jump"

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5vkuviq2sg3u"]
+[gd_scene load_steps=5 format=3 uid="uid://c5vkuviq2sg3u"]
 
 [ext_resource type="Script" path="res://Scripts/Login.gd" id="1_x05yt"]
 [ext_resource type="Theme" uid="uid://dj4gh1nn7ignp" path="res://Themes/settingtheme.tres" id="2_b8kjk"]
 [ext_resource type="PackedScene" uid="uid://dodgf2q7rdsde" path="res://Scenes/UtilityScenes/login_bg.tscn" id="3_ybf0i"]
+[ext_resource type="AudioStream" uid="uid://vuwgp3aufn2v" path="res://Audio/Background/last-days-166612.mp3" id="4_3vtgm"]
 
 [node name="Login" type="Node2D"]
 script = ExtResource("1_x05yt")
@@ -107,6 +108,11 @@ text = "quit"
 [node name="login_bg" parent="Control" instance=ExtResource("3_ybf0i")]
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="backgroundmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3vtgm")
+autoplay = true
+bus = &"music"
 
 [connection signal="pressed" from="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox/ButtonsVBox/Submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox/ButtonsVBox/Button" to="." method="_on_button_pressed"]
