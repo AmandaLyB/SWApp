@@ -44,6 +44,7 @@ color = Color(0, 1, 0, 1)
 thickness = 30
 
 [node name="Settings" type="Node2D"]
+visibility_layer = 3
 script = ExtResource("1_c62jf")
 
 [node name="Background" type="ColorRect" parent="."]
