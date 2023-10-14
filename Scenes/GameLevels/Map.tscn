@@ -11595,4 +11595,3 @@ bus = &"music"
 [connection signal="pressed" from="Player/UI/ingamesettings/MarginContainer/HeaderVBox/ButtonsVBox/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Player/UI/ingamesettings/MarginContainer/HeaderVBox/ButtonsVBox/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Player/UI/Settings" to="." method="_on_settings_pressed"]
-
