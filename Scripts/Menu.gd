@@ -2,6 +2,7 @@ extends Node2D
 
 var isPlaying = false
 
+var settingsPopup = preload("res://Scenes/MainScenes/Settings.tscn")
 #func _ready():
 
 func _on_play_button_pressed():
@@ -56,8 +57,10 @@ func _on_archives_pressed():
 
 func _on_settings_pressed():
 	if not isPlaying:
-		get_tree().change_scene_to_file("res://Scenes/MainScenes/Settings.tscn")
-	
+		var settings_instance = settingsPopup.instantiate()
+		add_child(settings_instance)
+#		get_tree().change_scene_to_file("res://Scenes/MainScenes/Settings.tscn")
+
 func _on_quit_button_pressed():
 	if not isPlaying:
 		get_tree().quit()
