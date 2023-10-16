@@ -1,4 +1,8 @@
 extends Node2D
+<<<<<<< Updated upstream
+=======
+var paused = false
+>>>>>>> Stashed changes
 
 func _ready():
 	var sound_manager = SoundManager

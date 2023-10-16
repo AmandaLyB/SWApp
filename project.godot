@@ -74,5 +74,9 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
+<<<<<<< Updated upstream
 renderer/rendering_method="mobile"
+=======
+renderer/rendering_method.mobile="gl_compatibility"
+>>>>>>> Stashed changes
 textures/vram_compression/import_etc2_astc=true
