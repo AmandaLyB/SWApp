@@ -1,4 +1,8 @@
 extends Node2D
+<<<<<<< Updated upstream
+=======
+var paused = false
+>>>>>>> Stashed changes
 
 var paused = false
 
