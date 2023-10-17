@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dg6s6vyhrq1sr"]
+[gd_scene load_steps=33 format=3 uid="uid://dg6s6vyhrq1sr"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_xnq8h"]
 [ext_resource type="Texture2D" uid="uid://bvspajwd537rr" path="res://Art/Sprites/Luke_Attack_Sprite.png" id="2_7fiu0"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cbj8o623tkiwl" path="res://Art/UI/rightButton.png" id="6_5gvdm"]
 [ext_resource type="Texture2D" uid="uid://c76iwlr78qbdb" path="res://Art/UI/circleButton.png" id="7_iojwq"]
 [ext_resource type="Texture2D" uid="uid://d4il6jqxrxca1" path="res://Art/UI/Luke_Attack_1_Button.png" id="8_rrskv"]
+[ext_resource type="AudioStream" uid="uid://bu34k8felu01g" path="res://Audio/Sound Effects/lightsaber-swing.mp3" id="10_4narv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sv3g8"]
 atlas = ExtResource("2_7fiu0")
@@ -183,8 +184,6 @@ script = ExtResource("1_xnq8h")
 position = Vector2(0, -40)
 sprite_frames = SubResource("SpriteFrames_uyjo6")
 animation = &"Attack1"
-frame = 4
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -24)
@@ -214,6 +213,10 @@ action = "Jump"
 position = Vector2(194, 90)
 texture_normal = ExtResource("8_rrskv")
 action = "Attack1"
+
+[node name="LightsaberSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_4narv")
+bus = &"effects"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="pressed" from="Camera2D/attack1" to="." method="_on_attack_1_pressed"]

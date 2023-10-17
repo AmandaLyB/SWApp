@@ -10,7 +10,6 @@ var chase = false
 var doDamage = false
 var attackPlayer = false
 
-
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -22,7 +21,6 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	
 	# Detect and attack player
 	if chase == true:
 		get_node("AnimatedSprite2D").play("Run")
@@ -37,6 +35,7 @@ func _physics_process(delta):
 		get_node("AnimatedSprite2D").play("Idle")
 	elif chase == false && attackPlayer == true:
 		get_node("AnimatedSprite2D").play("Attack")
+		
 	move_and_slide()
 		
 
@@ -51,12 +50,18 @@ func _on_player_detection_area_body_exited(body):
 		chase = false
 		animated_sprite.play("Idle")
 
+func damageRange(min_damage: int, max_damage: int):
+	var damage = randi() % (max_damage - min_damage + 1) + min_damage
+	return damage
+
 func _on_player_damage_area_body_entered(body):
 	if body.name == "Player" && attackPlayer == true:
 		doDamage = true
 		while (doDamage):
-			await get_tree().create_timer(0.5).timeout
-			body.health -= 3
+			$LightsaberSound.play()
+			await $LightsaberSound
+			await get_tree().create_timer(1.25).timeout
+			body.health -= damageRange(1,5)
 
 func _on_player_damage_area_body_exited(body):
 	if body.name == "Player":
