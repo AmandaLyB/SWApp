@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://hlf7g6xk8fjx"]
+[gd_scene load_steps=34 format=3 uid="uid://hlf7g6xk8fjx"]
 
 [ext_resource type="Script" path="res://Scripts/Vader.gd" id="1_xlh07"]
 [ext_resource type="Texture2D" uid="uid://updhp3p2sni5" path="res://Art/Sprites/VaderAttack.png" id="2_wekjf"]
 [ext_resource type="Texture2D" uid="uid://cibasrxtb58qc" path="res://Art/Sprites/VaderIdleH80.png" id="3_a4x0q"]
 [ext_resource type="Texture2D" uid="uid://c8sjnuc0tk63" path="res://Art/Sprites/VaderRun.png" id="4_mse1n"]
+[ext_resource type="AudioStream" uid="uid://bu34k8felu01g" path="res://Audio/Sound Effects/lightsaber-swing.mp3" id="5_f66xs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7lrkg"]
 radius = 8.0
@@ -208,8 +209,6 @@ shape = SubResource("CapsuleShape2D_7lrkg")
 position = Vector2(0, -31)
 sprite_frames = SubResource("SpriteFrames_67o5c")
 animation = &"Attack"
-frame = 5
-frame_progress = 1.0
 
 [node name="PlayerDetectionArea" type="Area2D" parent="."]
 position = Vector2(0, -36)
@@ -231,6 +230,11 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(-1, -28)
 shape = SubResource("CircleShape2D_m1jco")
+
+[node name="LightsaberSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_f66xs")
+pitch_scale = 1.25
+bus = &"effects"
 
 [connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_entered"]
 [connection signal="body_exited" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_exited"]
