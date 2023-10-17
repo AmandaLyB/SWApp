@@ -1,8 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://dg6s6vyhrq1sr"]
+[gd_scene load_steps=34 format=3 uid="uid://dg6s6vyhrq1sr"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_xnq8h"]
 [ext_resource type="Texture2D" uid="uid://bvspajwd537rr" path="res://Art/Sprites/Luke_Attack_Sprite.png" id="2_7fiu0"]
-[ext_resource type="Texture2D" uid="uid://bh8p31ffcair8" path="res://Art/Sprites/LukeIdleCentered.png" id="2_k3rj5"]
+[ext_resource type="Texture2D" uid="uid://chqfi5vvdv25x" path="res://Art/Sprites/LukeIdleCentered_H80.png" id="3_3q7sy"]
 [ext_resource type="Texture2D" uid="uid://ca6y5ufsbc05u" path="res://Art/Sprites/LukeSpriteJumpCentered.png" id="3_5ne8c"]
 [ext_resource type="Texture2D" uid="uid://bnky7a0nrqwqt" path="res://Art/Sprites/LukeSprite_LightSaberRun_Centered_H80.png" id="5_6yinp"]
 [ext_resource type="Texture2D" uid="uid://dxeaim545edmf" path="res://Art/UI/leftButton.png" id="5_kh1ku"]
@@ -31,21 +31,21 @@ region = Rect2(288, 0, 96, 80)
 atlas = ExtResource("2_7fiu0")
 region = Rect2(384, 0, 96, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ebt16"]
-atlas = ExtResource("2_k3rj5")
-region = Rect2(0, 4, 64, 60)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhq31"]
+atlas = ExtResource("3_3q7sy")
+region = Rect2(0, 0, 64, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_js65k"]
-atlas = ExtResource("2_k3rj5")
-region = Rect2(128, 4, 64, 60)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uxu4"]
+atlas = ExtResource("3_3q7sy")
+region = Rect2(64, 0, 64, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_huahc"]
-atlas = ExtResource("2_k3rj5")
-region = Rect2(192, 4, 64, 60)
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5dsk"]
+atlas = ExtResource("3_3q7sy")
+region = Rect2(128, 0, 64, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qngdo"]
-atlas = ExtResource("2_k3rj5")
-region = Rect2(320, 4, 64, 60)
+[sub_resource type="AtlasTexture" id="AtlasTexture_js2pv"]
+atlas = ExtResource("3_3q7sy")
+region = Rect2(192, 0, 64, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0en1t"]
 atlas = ExtResource("3_5ne8c")
@@ -114,17 +114,17 @@ animations = [{
 "speed": 10.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ebt16")
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_nhq31")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_js65k")
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_7uxu4")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_huahc")
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_t5dsk")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qngdo")
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_js2pv")
 }],
 "loop": true,
 "name": &"Idle",
@@ -175,7 +175,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2foj3"]
-size = Vector2(16, 48.1875)
+size = Vector2(18, 44.0938)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3yxcj"]
+radius = 48.0104
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xnq8h")
@@ -186,7 +189,7 @@ sprite_frames = SubResource("SpriteFrames_uyjo6")
 animation = &"Attack1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -24)
+position = Vector2(0, -21.9531)
 shape = SubResource("RectangleShape2D_2foj3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -218,5 +221,13 @@ action = "Attack1"
 stream = ExtResource("10_4narv")
 bus = &"effects"
 
+[node name="DealDamageArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DealDamageArea"]
+position = Vector2(0, -24)
+shape = SubResource("CircleShape2D_3yxcj")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="pressed" from="Camera2D/attack1" to="." method="_on_attack_1_pressed"]
+[connection signal="body_entered" from="DealDamageArea" to="." method="_on_deal_damage_area_body_entered"]
+[connection signal="body_exited" from="DealDamageArea" to="." method="_on_deal_damage_area_body_exited"]

@@ -9,6 +9,9 @@ const JUMP_VELOCITY = -400.0
 var chase = false
 var doDamage = false
 var attackPlayer = false
+var health = 50
+var damage = 1
+var isDead = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -37,7 +40,12 @@ func _physics_process(delta):
 		get_node("AnimatedSprite2D").play("Attack")
 		
 	move_and_slide()
-		
+	
+	# Currently set to delete Vader node
+	if health <= 0:
+		print("Vader was defeated!")
+		queue_free()
+		#get_tree().change_scene_to_file("res://Scenes/MainScenes/Menu.tscn")	
 
 func _on_player_detection_area_body_entered(body):
 	if body.name == "Player":
@@ -60,8 +68,9 @@ func _on_player_damage_area_body_entered(body):
 		while (doDamage):
 			$LightsaberSound.play()
 			await $LightsaberSound
-			await get_tree().create_timer(1.25).timeout
 			body.health -= damageRange(1,5)
+			await get_tree().create_timer(1.25).timeout
+			
 
 func _on_player_damage_area_body_exited(body):
 	if body.name == "Player":
