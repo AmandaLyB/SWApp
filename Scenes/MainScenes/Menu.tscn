@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_q7brq"]
 [ext_resource type="PackedScene" uid="uid://dsan41150ncqa" path="res://Scenes/UtilityScenes/day_bg.tscn" id="2_5f0g6"]
 [ext_resource type="Texture2D" uid="uid://jm0ei54ln7si" path="res://Art/UI/SkywalkerTitle2.png" id="3_unng5"]
-[ext_resource type="AudioStream" uid="uid://bao5f8kdf3om" path="res://Audio/Background/starfleet-command-150605.mp3" id="5_b58u8"]
+[ext_resource type="AudioStream" uid="uid://cwb6ogrp0iddd" path="res://Audio/Background/10 - Peace, The Jedi Consular - Mark Griskey, Gordy Haab, Jesse Harlin, Lennie Moore & Wilbert Roget, II.mp3" id="5_iexit"]
 [ext_resource type="Theme" uid="uid://dvqg3mlr181xd" path="res://Themes/default_theme.tres" id="10_obvo1"]
 
 [node name="Menu" type="Node2D"]
@@ -54,7 +54,7 @@ layout_mode = 2
 text = "quit"
 
 [node name="backgroundmusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_b58u8")
+stream = ExtResource("5_iexit")
 volume_db = -14.444
 autoplay = true
 bus = &"music"

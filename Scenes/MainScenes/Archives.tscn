@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/HTTPRequestSWAPI.gd" id="3_kg30p"]
 [ext_resource type="FontFile" uid="uid://c6qhfk3phjwa5" path="res://Themes/Font/soloist1.ttf" id="3_y4rwi"]
 [ext_resource type="Script" path="res://Scripts/HTTPRequestHome.gd" id="5_8dln3"]
-[ext_resource type="AudioStream" uid="uid://bgrowgo3olssl" path="res://Audio/Background/star-wars-style-march-165111.mp3" id="6_n4ydd"]
+[ext_resource type="AudioStream" uid="uid://dnhp1ilbgcmau" path="res://Audio/Background/02 - Glory, The Galactic Republic - Mark Griskey, Gordy Haab, Jesse Harlin, Lennie Moore & Wilbert Roget, II.mp3" id="6_8iq6n"]
 
 [node name="Archives" type="Node2D"]
 script = ExtResource("1_07ovb")
@@ -176,7 +176,7 @@ script = ExtResource("3_kg30p")
 script = ExtResource("5_8dln3")
 
 [node name="backgroundmusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_n4ydd")
+stream = ExtResource("6_8iq6n")
 volume_db = -14.444
 autoplay = true
 bus = &"music"
