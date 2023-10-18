@@ -10,6 +10,7 @@ var isDead = false
 var isAttacking = false
 var lastDirection = 1
 var doDamage = false
+var spike_damage_value = 1
 
 @onready var vader = get_node("../../Mobs/Vader")
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
@@ -85,3 +86,12 @@ func attack_vader():
 	if doDamage == true and isAttacking == true:
 		vader.health -= damageRange(1,5)
 		await get_tree().create_timer(3).timeout
+		
+func _on_Body_entered(body):
+	if body.is_in_group("spike"):
+		take_damage_from_spike()
+		
+func take_damage_from_spike():
+	if not isDead:
+		health -= spike_damage_value
+		
