@@ -15,12 +15,14 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1915.0
 offset_bottom = 1069.0
+metadata/_edit_use_anchors_ = true
 
 [node name="background" type="TextureRect" parent="Control"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_ns80y")
+metadata/_edit_use_anchors_ = true
 
 [node name="Game" type="Label" parent="Control/background"]
 layout_mode = 2
@@ -36,6 +38,7 @@ theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_y3w4l")
 theme_override_font_sizes/font_size = 256
 text = "Game"
+metadata/_edit_use_anchors_ = true
 
 [node name="Over" type="Label" parent="Control/background"]
 layout_mode = 2
@@ -51,6 +54,7 @@ theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_y3w4l")
 theme_override_font_sizes/font_size = 256
 text = "Over"
+metadata/_edit_use_anchors_ = true
 
 [node name="restartButton" type="Button" parent="Control/background"]
 layout_mode = 0
@@ -69,6 +73,7 @@ theme_override_fonts/font = ExtResource("3_y3w4l")
 theme_override_font_sizes/font_size = 100
 text = "Restart
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="quitButton" type="Button" parent="Control/background"]
 layout_mode = 0
@@ -86,6 +91,7 @@ theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("3_y3w4l")
 theme_override_font_sizes/font_size = 100
 text = "quit"
+metadata/_edit_use_anchors_ = true
 
 [node name="darthvader-breathing" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("5_hn3mx")

@@ -45,7 +45,7 @@ func _physics_process(delta):
 	if health <= 0:
 		print("Vader was defeated!")
 		queue_free()
-		#get_tree().change_scene_to_file("res://Scenes/MainScenes/Menu.tscn")	
+		get_tree().change_scene_to_file("res://Scenes/MainScenes/Victory.tscn")	
 
 func _on_player_detection_area_body_entered(body):
 	if body.name == "Player":
