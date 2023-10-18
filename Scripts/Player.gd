@@ -48,7 +48,6 @@ func _physics_process(delta):
 			
 	
 	move_and_slide()
-	attack_vader()
 	
 	if health <= 0:
 		print("Player died!")
@@ -67,6 +66,7 @@ func _on_attack_1_pressed():
 		get_node("AnimatedSprite2D").flip_h = true
 	animated_sprite.play("Attack1")
 	$LightsaberSound.play()
+	attack_vader()
 	await animated_sprite.animation_finished
 	isAttacking = false
 
@@ -86,6 +86,7 @@ func attack_vader():
 	if doDamage == true and isAttacking == true:
 		vader.health -= damageRange(1,5)
 		await get_tree().create_timer(3).timeout
+		isAttacking = false
 		
 func _on_Body_entered(body):
 	if body.is_in_group("spike"):
