@@ -7223,11 +7223,11 @@ color = Color(0, 0, 0, 0)
 thickness = 30
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_8ejjx"]
-color = Color(0, 1, 0, 1)
+color = Color(1, 0, 0, 1)
 thickness = 30
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_bqwxa"]
-color = Color(0, 1, 0, 1)
+color = Color(1, 0, 0, 1)
 thickness = 30
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_0v6hx"]
@@ -7235,11 +7235,11 @@ color = Color(0, 0, 0, 0)
 thickness = 30
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_xjlqs"]
-color = Color(0, 1, 0, 1)
+color = Color(0, 0.905882, 1, 1)
 thickness = 30
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_4rt1e"]
-color = Color(0, 1, 0, 1)
+color = Color(0, 0.905882, 1, 1)
 thickness = 30
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ta0qm"]

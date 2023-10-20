@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dg6s6vyhrq1sr"]
+[gd_scene load_steps=35 format=3 uid="uid://dg6s6vyhrq1sr"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_xnq8h"]
 [ext_resource type="Texture2D" uid="uid://bvspajwd537rr" path="res://Art/Sprites/Luke_Attack_Sprite.png" id="2_7fiu0"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c76iwlr78qbdb" path="res://Art/UI/circleButton.png" id="7_iojwq"]
 [ext_resource type="Texture2D" uid="uid://d4il6jqxrxca1" path="res://Art/UI/Luke_Attack_1_Button.png" id="8_rrskv"]
 [ext_resource type="AudioStream" uid="uid://bu34k8felu01g" path="res://Audio/Sound Effects/lightsaber-swing.mp3" id="10_4narv"]
+[ext_resource type="AudioStream" uid="uid://bwabhw0mlvt1o" path="res://Audio/Sound Effects/Single-step.mp3" id="11_ycqil"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sv3g8"]
 atlas = ExtResource("2_7fiu0")
@@ -226,6 +227,11 @@ bus = &"effects"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DealDamageArea"]
 position = Vector2(0, -24)
 shape = SubResource("CircleShape2D_3yxcj")
+
+[node name="Footstep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ycqil")
+volume_db = 3.5
+pitch_scale = 1.25
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="pressed" from="Camera2D/attack1" to="." method="_on_attack_1_pressed"]

@@ -68,7 +68,7 @@ func _on_player_damage_area_body_entered(body):
 		while (doDamage):
 			$LightsaberSound.play()
 			await $LightsaberSound
-			body.health -= damageRange(1,5)
+			body.health -= damageRange(3,15)
 			await get_tree().create_timer(1.25).timeout
 			
 
