@@ -41,6 +41,8 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 		if velocity.y == 0:
 			animated_sprite.play("Run")
+			if not $Footstep.is_playing():
+				$Footstep.play()
 	elif isAttacking == false:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if velocity.y == 0:
