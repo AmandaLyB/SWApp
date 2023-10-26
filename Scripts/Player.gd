@@ -10,7 +10,7 @@ var isDead = false
 var isAttacking = false
 var lastDirection = 1
 var doDamage = false
-var spike_damage_value = 1
+var spike_damage_value = 10
 
 @onready var vader = get_node("../../Mobs/Vader")
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
@@ -98,4 +98,6 @@ func take_damage_from_spike():
 		health -= spike_damage_value
 		if health <= 0:
 			isDead = true
-		
+
+func go_next_level():
+	get_tree().change_scene_to_file("res://Scenes/GameLevels/Map.tscn")

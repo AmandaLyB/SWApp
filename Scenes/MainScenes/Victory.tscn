@@ -130,6 +130,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="backgroundmusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_clg72")
+volume_db = -19.5
 autoplay = true
 
 [connection signal="pressed" from="Control/background/homeButton" to="." method="_on_home_button_pressed"]
