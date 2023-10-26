@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://c7vvamjrpkpwr"]
+[gd_scene load_steps=38 format=3 uid="uid://c7vvamjrpkpwr"]
 
 [ext_resource type="Script" path="res://Scripts/Map.gd" id="1_srjri"]
 [ext_resource type="PackedScene" uid="uid://dg6s6vyhrq1sr" path="res://Scenes/UtilityScenes/Player.tscn" id="2_64vdv"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://Scripts/musicslider.gd" id="12_vy3g5"]
 [ext_resource type="Script" path="res://Scripts/sfxslider.gd" id="13_lbx0w"]
 [ext_resource type="AudioStream" uid="uid://nh5kflolw7cf" path="res://Audio/Background/cinematic-battle-music-star-wars-style-148641.mp3" id="14_sr14w"]
+[ext_resource type="PackedScene" uid="uid://b5f6onqmhnfwv" path="res://Scenes/UtilityScenes/spikes.tscn" id="19_ueg5y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ovqhk"]
 texture = ExtResource("4_qb7c1")
@@ -11758,6 +11759,18 @@ offset_bottom = 125.0
 focus_mode = 0
 theme = ExtResource("10_4vdnj")
 text = "Settings"
+
+[node name="Spikes" parent="Player" instance=ExtResource("19_ueg5y")]
+position = Vector2(194, 420)
+
+[node name="Spikes2" parent="Player" instance=ExtResource("19_ueg5y")]
+position = Vector2(255, 421)
+
+[node name="Spikes3" parent="Player" instance=ExtResource("19_ueg5y")]
+position = Vector2(319, 551)
+
+[node name="Spikes4" parent="Player" instance=ExtResource("19_ueg5y")]
+position = Vector2(333, 551)
 
 [node name="Mobs" type="Node2D" parent="."]
 

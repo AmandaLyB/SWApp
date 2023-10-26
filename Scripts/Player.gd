@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -17,8 +17,7 @@ var spike_damage_value = 1
 @onready var collision_shape : CollisionShape2D = $CollisionShape2D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-#var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+#var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")d
 	
 func _physics_process(delta):
 	# Add the gravity.
@@ -91,10 +90,12 @@ func attack_vader():
 		isAttacking = false
 		
 func _on_Body_entered(body):
-	if body.is_in_group("spike"):
+	if body.name == "Spikes":
 		take_damage_from_spike()
 		
 func take_damage_from_spike():
 	if not isDead:
 		health -= spike_damage_value
+		if health <= 0:
+			isDead = true
 		
