@@ -179,7 +179,7 @@ animations = [{
 size = Vector2(18, 44.0938)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3yxcj"]
-radius = 48.0104
+radius = 25.2982
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xnq8h")
