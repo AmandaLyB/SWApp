@@ -4616,6 +4616,7 @@ scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground2"]
+modulate = Color(1, 1, 1, 0.576471)
 position = Vector2(0, 53.3333)
 motion_scale = Vector2(2, 0)
 motion_mirroring = Vector2(2200, 0)
