@@ -16,7 +16,7 @@ func _on_request_completed(result, response_code, headers, body):
 		authorizationFailed.text = "Something went wrong, try again."
 	else:
 		print("Connection successful.")
-		get_tree().change_scene_to_file("res://Scenes/MainScene/Menu.tscn")
+		SceneTransition.change_scene("res://Scenes/MainScene/Menu.tscn")
 
 func _on_submit_pressed():
 	emit_signal("get_credentials", username.text, password.text)
@@ -25,7 +25,7 @@ func _on_submit_pressed():
 	print("password: " + password.text)
 	if username.text == "aaa" and password.text == "aaa":
 		print("Credentials Valid")
-		get_tree().change_scene_to_file("res://Scenes/MainScenes/Menu.tscn")
+		SceneTransition.change_scene("res://Scenes/MainScenes/Menu.tscn")
 		
 	else:
 		var data = {

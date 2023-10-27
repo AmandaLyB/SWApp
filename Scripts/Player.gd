@@ -100,4 +100,4 @@ func take_damage_from_spike():
 			isDead = true
 
 func go_next_level():
-	get_tree().change_scene_to_file("res://Scenes/GameLevels/Map.tscn")
+	SceneTransition.change_scene("res://Scenes/GameLevels/Map.tscn")

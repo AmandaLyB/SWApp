@@ -15,7 +15,7 @@ func _on_settings_pressed():
 	paused = !paused
 
 func _on_quit_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/MainScenes/Menu.tscn")
+	SceneTransition.change_scene("res://Scenes/MainScenes/Menu.tscn")
 	Engine.time_scale = 1
 
 func _on_restart_pressed():

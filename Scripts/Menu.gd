@@ -23,15 +23,15 @@ func _on_play_button_pressed():
 
 func _on_level1_button_pressed():
 	if isPlaying:
-		get_tree().change_scene_to_file("res://Scenes/MainScenes/Intro_Cinematic.tscn")
+		SceneTransition.change_scene("res://Scenes/MainScenes/Intro_Cinematic.tscn")
 
 func _on_level2_button_pressed():
 	if isPlaying:
-		get_tree().change_scene_to_file("res://Scenes/MainScenes/Intro_Cinematic.tscn")
+		SceneTransition.change_scene("res://Scenes/MainScenes/Intro_Cinematic.tscn")
 
 func _on_level3_button_pressed():
 	if isPlaying:
-		get_tree().change_scene_to_file("res://Scenes/MainScenes/Intro_Cinematic.tscn")
+		SceneTransition.change_scene("res://Scenes/MainScenes/Intro_Cinematic.tscn")
 
 func _on_back_button_pressed():
 	if isPlaying:
@@ -53,7 +53,7 @@ func _on_back_button_pressed():
 
 func _on_archives_pressed():
 	if not isPlaying:
-		get_tree().change_scene_to_file("res://Scenes/MainScenes/Archives.tscn")
+		SceneTransition.change_scene("res://Scenes/MainScenes/Archives.tscn")
 
 func _on_settings_pressed():
 	if not isPlaying:
