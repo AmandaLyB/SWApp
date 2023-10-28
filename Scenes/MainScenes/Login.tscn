@@ -90,6 +90,7 @@ text = "PASSwoRd"
 [node name="inputPassword" type="LineEdit" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox/VBoxContainer2"]
 layout_mode = 2
 placeholder_text = "Password"
+secret = true
 
 [node name="ButtonsVBox" type="VBoxContainer" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox"]
 layout_mode = 2
