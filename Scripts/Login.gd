@@ -6,9 +6,9 @@ extends Node2D
 signal get_credentials(name, pw)
 
 func _on_request_completed(result, response_code, headers, body):
-	print("function entered")
+	print("Sending to back end API...")
 	var json = JSON.parse_string(body.get_string_from_utf8())
-	print(response_code)
+	print("Response Code: " + str(response_code))
 	if response_code == 401:
 		authorizationFailed.text = "invalid login credentials."
 	elif response_code != 200:
@@ -16,7 +16,7 @@ func _on_request_completed(result, response_code, headers, body):
 		authorizationFailed.text = "Something went wrong, try again."
 	else:
 		print("Connection successful.")
-		SceneTransition.change_scene("res://Scenes/MainScene/Menu.tscn")
+		SceneTransition.change_scene("res://Scenes/MainScenes/Menu.tscn")
 
 func _on_submit_pressed():
 	emit_signal("get_credentials", username.text, password.text)
@@ -28,6 +28,7 @@ func _on_submit_pressed():
 		SceneTransition.change_scene("res://Scenes/MainScenes/Menu.tscn")
 		
 	else:
+		authorizationFailed.text = "Attempting login..."
 		var data = {
 			"username": username.text,
 			"password": password.text
