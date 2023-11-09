@@ -4561,7 +4561,7 @@ thickness = 30
 color = Color(0, 0.905882, 1, 1)
 thickness = 30
 
-[node name="Node2D" type="Node2D"]
+[node name="Map2" type="Node2D"]
 script = ExtResource("1_cnqtj")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -5033,6 +5033,7 @@ text = "Settings"
 stream = ExtResource("18_io4go")
 volume_db = -19.5
 autoplay = true
+bus = &"music"
 
 [connection signal="pressed" from="Player/UI/ingamesettings/MarginContainer/HeaderVBox/ButtonsVBox/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Player/UI/ingamesettings/MarginContainer/HeaderVBox/ButtonsVBox/Quit" to="." method="_on_quit_pressed"]
