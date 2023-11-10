@@ -1,11 +1,93 @@
-[gd_scene load_steps=7 format=3 uid="uid://cygxcc2urgb44"]
+[gd_scene load_steps=12 format=3 uid="uid://cygxcc2urgb44"]
 
 [ext_resource type="Script" path="res://Scripts/Archives.gd" id="1_07ovb"]
 [ext_resource type="Theme" uid="uid://dj4gh1nn7ignp" path="res://Themes/settingtheme.tres" id="2_2fmxd"]
+[ext_resource type="Texture2D" uid="uid://370hm4ef0qux" path="res://Art/UI/loadingCircles.png" id="2_ykt0i"]
 [ext_resource type="Script" path="res://Scripts/HTTPRequestSWAPI.gd" id="3_kg30p"]
 [ext_resource type="FontFile" uid="uid://c6qhfk3phjwa5" path="res://Themes/Font/soloist1.ttf" id="3_y4rwi"]
 [ext_resource type="Script" path="res://Scripts/HTTPRequestHome.gd" id="5_8dln3"]
 [ext_resource type="AudioStream" uid="uid://dnhp1ilbgcmau" path="res://Audio/Background/02 - Glory, The Galactic Republic - Mark Griskey, Gordy Haab, Jesse Harlin, Lennie Moore & Wilbert Roget, II.mp3" id="6_8iq6n"]
+
+[sub_resource type="Animation" id="Animation_gqmif"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LoadingSpritesheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LoadingSpritesheet:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 4)]
+}
+
+[sub_resource type="Animation" id="Animation_23lep"]
+resource_name = "Loading1"
+length = 1.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LoadingSpritesheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_88ddm"]
+resource_name = "Loading2"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LoadingSpritesheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LoadingSpritesheet:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(4, 4), Vector2(3.8, 3.8), Vector2(4, 4), Vector2(3.8, 3.8), Vector2(4, 4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bo7hj"]
+_data = {
+"Loading1": SubResource("Animation_23lep"),
+"Loading2": SubResource("Animation_88ddm"),
+"RESET": SubResource("Animation_gqmif")
+}
 
 [node name="Archives" type="Node2D"]
 script = ExtResource("1_07ovb")
@@ -14,6 +96,15 @@ script = ExtResource("1_07ovb")
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.0666667, 0.0862745, 0.121569, 1)
+
+[node name="LoadingSpritesheet" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(960, 540)
+scale = Vector2(4, 4)
+texture = ExtResource("2_ykt0i")
+hframes = 5
+vframes = 3
+frame = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -104,37 +195,31 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_y4rwi")
 theme_override_font_sizes/font_size = 54
-text = "placeholder info"
 
 [node name="swapiheight" type="Label" parent="MarginContainer/VBoxContainer/characterText/swapiinfobox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_y4rwi")
 theme_override_font_sizes/font_size = 54
-text = "placeholder info"
 
 [node name="swapimass" type="Label" parent="MarginContainer/VBoxContainer/characterText/swapiinfobox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_y4rwi")
 theme_override_font_sizes/font_size = 54
-text = "placeholder info"
 
 [node name="swapieye" type="Label" parent="MarginContainer/VBoxContainer/characterText/swapiinfobox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_y4rwi")
 theme_override_font_sizes/font_size = 54
-text = "placeholder info"
 
 [node name="swapibirth" type="Label" parent="MarginContainer/VBoxContainer/characterText/swapiinfobox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_y4rwi")
 theme_override_font_sizes/font_size = 54
-text = "placeholder info"
 
 [node name="swapihome" type="Label" parent="MarginContainer/VBoxContainer/characterText/swapiinfobox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_y4rwi")
 theme_override_font_sizes/font_size = 54
-text = "placeholder info"
 vertical_alignment = 3
 
 [node name="controlbuttonsbox" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -180,6 +265,11 @@ stream = ExtResource("6_8iq6n")
 volume_db = -19.5
 autoplay = true
 bus = &"music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bo7hj")
+}
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/controlbuttonsbox/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/controlbuttonsbox/exit" to="." method="_on_exit_pressed"]
