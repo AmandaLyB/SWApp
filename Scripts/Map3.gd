@@ -21,3 +21,8 @@ func _on_quit_pressed() -> void:
 func _on_restart_pressed():
 	get_tree().reload_current_scene()
 	Engine.time_scale = 1
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.get_parent() is Player:
+		area.get_tree().reload_current_scene()
