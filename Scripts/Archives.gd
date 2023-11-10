@@ -2,12 +2,22 @@ extends Node2D
 
 var currentCharacterIndex: int = 0
 var characterIndexArray: Array = [1, 5, 11, 4, 14, 10, 13, 3, 2, 20]
+@onready var characterInfoBox = $MarginContainer/VBoxContainer/characterText
+@onready var loadingSprite = $LoadingSpritesheet
+@onready var anim = $AnimationPlayer
 
 func _ready():
+	characterInfoBox.visible = false
 	$HTTPRequest.connect("character_data_fetched", updateText)
 	parseCharacterData(characterIndexArray[currentCharacterIndex])
-
+	
 func parseCharacterData(characterIndex):
+	# LOADING ANIMATION BLOCK PART 1
+	characterInfoBox.visible = false
+	loadingSprite.visible = true
+	anim.play("Loading2")
+	###
+	
 	var characterId = characterIndexArray[currentCharacterIndex]
 	var apiUrl = "https://swapi.dev/api/people/" + str(characterId) + "/"
 	$HTTPRequest.request(apiUrl)
@@ -36,7 +46,7 @@ func updateText(data):
 
 	#await get_tree().create_timer(1).timeout
 	requestHome(data["homeworld"])
-
+	
 	var characterId = characterIndexArray[currentCharacterIndex]
 	if characterId == 1:
 		$MarginContainer/VBoxContainer/characterText/factionsymbol.texture = load("res://Art/ArchiveCharacters/luke.png")
@@ -65,3 +75,10 @@ func requestHome(url):
 
 func updateHome(data):
 	$MarginContainer/VBoxContainer/characterText/swapiinfobox/swapihome.text = data["name"]
+	
+	# LOADING ANIMATION BLOCK PART 2
+	loadingSprite.visible = false
+	if anim.is_playing:
+		anim.stop()
+	characterInfoBox.visible = true
+	### 

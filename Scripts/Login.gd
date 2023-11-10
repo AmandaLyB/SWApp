@@ -17,7 +17,7 @@ func _on_request_completed(result, response_code, headers, body):
 	else:
 		print("Connection successful.")
 		SceneTransition.change_scene("res://Scenes/MainScenes/Menu.tscn")
-
+		
 func _on_submit_pressed():
 	emit_signal("get_credentials", username.text, password.text)
 	
@@ -26,7 +26,6 @@ func _on_submit_pressed():
 	if username.text == "aaa" and password.text == "aaa":
 		print("Credentials Valid")
 		SceneTransition.change_scene("res://Scenes/MainScenes/Menu.tscn")
-		
 	else:
 		authorizationFailed.text = "Attempting login..."
 		var data = {
