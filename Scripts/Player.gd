@@ -93,6 +93,12 @@ func _on_Body_entered(body):
 	if body.name == "Spikes":
 		take_damage_from_spike()
 		
+func take_damage_from_blaster():
+	if not isDead:
+		health -= damageRange(1,10)
+		if health <= 0:
+			isDead = true
+			
 func take_damage_from_spike():
 	if not isDead:
 		health -= spike_damage_value
