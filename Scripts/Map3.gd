@@ -7,10 +7,10 @@ func _ready():
 
 func _on_settings_pressed():
 	if paused:
-		$Player/UI/ingamesettings.visible = false
+		$PlayerHUD/UI/ingamesettings.visible = false
 		Engine.time_scale = 1
 	else:
-		$Player/UI/ingamesettings.visible = true
+		$PlayerHUD/UI/ingamesettings.visible = true
 		Engine.time_scale = 0
 	paused = !paused
 

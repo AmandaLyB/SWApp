@@ -10,11 +10,11 @@ func _on_play_button_pressed():
 	var level2SelectButton = $Control/MarginContainer/VBoxContainer2/Archives
 	var level3SelectButton = $Control/MarginContainer/VBoxContainer2/Settings
 	var backButton = $Control/MarginContainer/VBoxContainer2/QuitButton
-	level1SelectButton.text = "Level 1: Forests of Yavin IV"	
+	level1SelectButton.text = "Level 1: Forests of Yavin iv"	
 	level1SelectButton.connect("pressed", _on_level1_button_pressed)
-	level2SelectButton.text = "Level 2: Placeholder"	
+	level2SelectButton.text = "Level 2: trecherous jungle"	
 	level2SelectButton.connect("pressed", _on_level2_button_pressed)
-	level3SelectButton.text = "Level 3: Placeholder"	
+	level3SelectButton.text = "Level 3: final trial: vader"	
 	level3SelectButton.connect("pressed", _on_level3_button_pressed)
 	backButton.text = "back"	
 	backButton.connect("pressed", _on_back_button_pressed)
@@ -27,11 +27,11 @@ func _on_level1_button_pressed():
 
 func _on_level2_button_pressed():
 	if isPlaying:
-		SceneTransition.change_scene("res://Scenes/MainScenes/Intro_Cinematic.tscn")
+		SceneTransition.change_scene("res://Scenes/GameLevels/Map2.tscn")
 
 func _on_level3_button_pressed():
 	if isPlaying:
-		SceneTransition.change_scene("res://Scenes/MainScenes/Intro_Cinematic.tscn")
+		SceneTransition.change_scene("res://Scenes/GameLevels/Map.tscn")
 
 func _on_back_button_pressed():
 	if isPlaying:

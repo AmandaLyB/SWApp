@@ -11742,9 +11742,9 @@ text = "quit"
 
 [node name="HP" type="Label" parent="Player/UI"]
 offset_left = 22.0
-offset_top = 19.0
+offset_top = 56.0
 offset_right = 135.0
-offset_bottom = 103.0
+offset_bottom = 140.0
 theme = ExtResource("10_4vdnj")
 theme_override_fonts/font = ExtResource("9_fppj6")
 text = "HP: "
